@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC 
+	"-//Hibernate/Hibernate Configuration DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration.dtd">
+
+	<hibernate-mapping>
+	<class name="com.ManyToOne.Subject" table="Subject">
+	<id name="subjectId" type="int" column="Subject_id">
+	<generator class="native"></generator>
+	</id>
+	
+	<property name="subjectName" column="Subject_Name" type="string"></property>
+	
+	</class>
+	
+	</hibernate-mapping>

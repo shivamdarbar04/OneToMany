@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC 
+	"-//Hibernate/Hibernate Configuration DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration.dtd">
+
+	<hibernate-mapping>
+	
+	<class name="com.ManyToOne.Student" table="Student">
+	<id name="studentId" type="int" column="Student_id">
+	<generator class="native"></generator>
+	</id>
+	
+	<property name="firstName" column="First_Name" type="string"/>
+	<property name="lastName" column="Last_Name" type="string"/>
+	<property name="className" column="Class" type="string"/>
+	<property name="rollNo" column="RollNo" type="string"/>
+	<property name="age" column="Age" type="int"/>
+	
+	<list name="subjects" cascade="all">
+	<key column="Student_id"/>
+	<list indexcolumn ="idx"/>
+	<one-to-many class="com.ManyToOne.Subject"/>
+	</list>
+	
+	</class>
+	
+	
+	</hibernate-mapping>
